@@ -56,14 +56,22 @@ public class TicTacToe {
             }
         }
 
-        // TODO: three-in-a-row vertically 
+        for(int r=0; r<3; r++) {
+            // three-in-a-row vertically
+            if(board[0][r] != '.' && board[0][r] == board[1][r] && board[1][r] == board[2][r]) {
+                return board[0][r];
+            }
+        }
 
         // diagonals
         if(board[0][0] != '.' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
             return board[0][0];
         }
-        // TODO: check other diagonal
-            
+
+        // the other diagnal
+        if(board[0][2] != '.' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+            return board[0][2];
+        }            
         return '-';
     }
 }
